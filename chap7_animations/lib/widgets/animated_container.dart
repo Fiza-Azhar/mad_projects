@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
-
 class AnimatedContainerWidget extends StatefulWidget {
   const AnimatedContainerWidget({
     Key? key,
   }) : super(key: key);
   @override
-  _AnimatedContainerWidgetState createState() =>
-      _AnimatedContainerWidgetState();
+  _AnimatedContainerWidgetState createState() => _AnimatedContainerWidgetState();
 }
-
 class _AnimatedContainerWidgetState extends State<AnimatedContainerWidget> {
   double _height = 100.0;
   double _width = 100.0;
@@ -17,7 +14,6 @@ class _AnimatedContainerWidgetState extends State<AnimatedContainerWidget> {
       _width = _width >= 320.0 ? 100.0 : _width += 50.0;
     });
   }
-
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -28,7 +24,7 @@ class _AnimatedContainerWidgetState extends State<AnimatedContainerWidget> {
           color: Colors.amber,
           height: _height,
           width: _width,
-          child: TextButton(
+          child: ElevatedButton(
             child: Text('Tap to\nGrow Width\n$_width'),
             onPressed: () {
               _increaseWidth();
